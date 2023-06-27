@@ -12,18 +12,20 @@ namespace BaiTapBuoi5
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            //SinhVien sv = new SinhVien();
-            //sv.ShowListSV();
+            SinhVien sv = new SinhVien();
+            sv.ShowListSV();
 
             //SoNguyenTo soNT = new SoNguyenTo();
             //soNT.timSoNguyenTo();
 
-            bsc_usc ub = new bsc_usc();
-            ub.BSC_USC();
+            //bsc_usc ub = new bsc_usc();
+            //ub.BSC_USC();
 
+            //ThuaSoNT tsnt = new ThuaSoNT();
+            //tsnt.tSNT(); 
 
-
-
+            //TimThu timThu = new TimThu();
+            //timThu.timThu();
 
             Console.ReadKey();
         }

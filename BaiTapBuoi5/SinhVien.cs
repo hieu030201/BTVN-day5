@@ -41,13 +41,37 @@ namespace BaiTapBuoi5
             {
                 this.hocLuc = "Yếu";
             }
+       
 
-            
             Console.WriteLine("{0,-25} {1, -15} {2, 0}", this.SVname, this.dtb , this.hocLuc);
+        }
+
+        public void orderByDiem()
+        {
+            double[] arr = { this.dtb };
+            Array.Reverse(arr);
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+        }
+
+        public void orderbySV(SinhVien[] sv)
+        {
+
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("------------------***Thông Tin SV khi sắp xếp là***------------------");
+            var sortedSinhVien = sv.OrderByDescending(s => s.dtb);
+            foreach (var svn in sortedSinhVien)
+            {
+                Console.WriteLine("{0,-25} {1, -15} {2, 0}", svn.SVname, svn.dtb, svn.hocLuc);
+            }
         }
 
         public void ShowListSV()
         {
+           
             Console.WriteLine("Nhập số sinh viên:");
             int n = int.Parse(Console.ReadLine());
             SinhVien[] sv = new SinhVien[n];
@@ -60,10 +84,15 @@ namespace BaiTapBuoi5
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("--------------------------***Thông Tin SV***--------------------------");
             Console.WriteLine("{0,-25} {1, -15} {2, 0}", "Họ và tên", "Điểm TB", "Học lực");
+
             for (int i = 0; i < n; i++)
             {
                 sv[i].showSV();
             }
+
+            //Sắp xếp sinh viên
+
+            orderbySV(sv);
         }
     }
 
